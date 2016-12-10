@@ -1,0 +1,110 @@
+ <div class="portlet-body">
+							<div class="tabbable-custom ">
+								<ul class="nav nav-tabs ">
+									<li  >
+										<a ui-sref="citylisting" data-toggle="tab">
+										 Manage City/Town </a>
+									</li>
+									<li class="active" >
+										<a ui-sref="arealisting" data-toggle="tab">
+										Manage Area </a>
+									</li>
+								</ul>
+								<div class="tab-content" >
+			
+							
+									<div class="tab-pane active" >
+		
+			<div class="clearfix">
+									<br>
+								</div>
+							<div class="row">
+				<div class="col-md-12">
+				<div class="portlet light" >
+						<div class="portlet-title" >
+							<div class="caption">
+								<i class="fa fa-globe"></i>View Area
+							</div>
+							<div class="actions">
+								<a  class="btn btn-circle btn-sm green" ng-click="addarea()">
+									Add Area <i class="fa fa-plus"></i>
+									</a>
+									
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12" >
+                	<div class="dataTables_filter" style="padding-top: 8px;">
+                		<label>Search:<input class="form-control input-sm input-inline" type="search" placeholder="" aria-controls="sample_1" ng-model="q1"></label>
+                       
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                        <div class="pagination-div" >
+                           <ul class="pagination" style="float: right;">
+                           		<li style="float:left; padding-top:8px;">Total Records : {{daily_countArea}}&nbsp;</li>
+                                <li data-ng-class="DisablePrevPageArea()"><a href data-ng-click="prevPageArea()"> Prev</a></li>
+                                <li data-ng-repeat="n in rangeArea()" data-ng-class="{active: n == currentPageArea}" data-ng-click="setPageArea(n)"><a href="#">{{n+1}}</a></li>
+                                <li data-ng-class="DisableNextPageArea()"><a href data-ng-click="nextPageArea()">Next </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+						<div class="portlet-body">
+                        
+<table class="table table-striped table-bordered table-hover"  ng-init="areaview()">
+							<thead>
+							
+                          
+                       <tr>
+								<th>
+									Area Name
+								</th>
+								<th>
+									City Name
+								</th>
+								
+                                 <!-- <th>
+									 Edit
+								</th> -->
+								
+                                <th>
+									Delete
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+                            
+<tr ng-repeat="area in areas_len = (areas |  filter:q1 | pagination : currentPageArea*itemsPerPageArea | limitTo: itemsPerPageArea)" >
+								
+								
+								<td>
+									{{area.aname}}  
+									 
+								</td>
+								<td>
+									{{area.cname}}
+									 
+								</td>
+								
+								<!-- <td class="center">
+								
+			<a class="btn btn-xs default btn-editable" data-target="#ajax" data-toggle="modal" href="edit_city.php?city_id=<?php echo $arr1['city_id'];?>" ><i class="fa fa-pencil"></i> Edit</a>
+								</td> -->
+								<td class="center">
+								<a class="btn default btn-xs red" ng-click="deleteArea(area.aid)"> Delete </a>	
+								</td>
+							</tr>
+                             
+							
+                            </tbody>
+							</table>
+                            	
+						</div>
+					</div>
+					
+				</div>
+			</div>	
+							</div>
+							</div>
+			
+		

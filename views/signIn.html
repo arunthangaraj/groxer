@@ -1,0 +1,56 @@
+<div class="containerliquid whitebg">
+    <div class="col-md-4 col-md-offset-4">
+        
+       					
+<div class="portlet light bordered container-groxer">
+  
+    <div class="portlet-body">
+
+     <form name="signinform" class="bv-form" method="post" ng-submit="signIn()">
+
+        <h2 class="text-center font-green-haze bold">Sign In</h2>
+
+        <div class="clearfix">&nbsp;</div>
+
+        <div class="form-group form-md-line-input"  ng-class="{ 'has-error' : signinform.email.$invalid && signinform.email.$dirty }">
+            <input class="form-control" type="email" name="email" ng-model="email" placeholder="Email" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required autofocus>
+
+            <span class="help-block" ng-show="signinform.email.$dirty && signinform.email.$error.required">
+                Your email address is required
+            </span>
+            <span class="help-block" ng-show="signinform.email.$dirty && ! signinform.email.$error.required && signinform.email.$error.pattern">
+                Your email address is invalid
+            </span>
+
+        </div>
+
+        <div class="form-group form-md-line-input" ng-class="{ 'has-error' : signinform.password.$invalid && signinform.password.$dirty }">
+            <input class="form-control" type="password" name="password" ng-model="password" placeholder="Password" required>
+
+            <span class="help-block" ng-show="signinform.password.$dirty && signinform.password.$error.required">
+                Password is required
+            </span>
+
+        </div>
+            <div class="clearfix">&nbsp;</div>
+            <div class="clearfix">&nbsp;</div>
+
+        <center>
+            <button type="submit" ng-disabled="signinform.$invalid" class="btn btn-success">Sign in</button>
+        </center>
+        <br>
+
+        <p class="text-center">
+            <a ui-sref="resetPassword">Forgot your password?</a>
+        </p>
+
+      <!--   <p class="text-center text-muted">
+            <small>Don't have an account yet? <a ui-sref="signUp">Sign up</a></small>
+        </p>
+ -->
+    </form>
+    </div>
+</div>
+</div>
+    
+</div>

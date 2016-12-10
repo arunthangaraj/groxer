@@ -1,0 +1,383 @@
+ <div class="portlet-body">
+							<div class="tabbable-custom ">
+								<ul class="nav nav-tabs ">
+									<li  class="active">
+										<a ng-href="\#overview1" data-toggle="tab">
+										 Overview </a>
+									</li>
+									<li>
+										<a ng-href="\#overview2" data-toggle="tab">
+										Orders </a>
+									</li>
+								</ul>
+								<div class="tab-content" >
+									<div class="tab-pane active" id="overview1" >
+		
+			<div class="clearfix">
+									<br>
+								</div>
+
+			
+<div class="row" >
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
+						<div class="dashboard-stat2 portlet light">
+							<div class="display">
+								<div class="number">
+									<h3 class="font-green-sharp">{{data.totalproduct}}<small class="font-green-sharp"></small></h3>
+									<small>TOTAL Products Sold</small>
+								</div>
+								<div class="icon">
+									<i class="icon-pie-chart"></i>
+								</div>
+							</div>
+							<div class="progress-info">
+								<div class="progress">
+									<span style="width:{{data.productprogress}} %;" class="progress-bar progress-bar-success green-sharp">
+									<span class="sr-only">{{data.productprogress}}% progress</span>
+									</span>
+								</div>
+								<div class="status">
+									<div class="status-title">
+										 progress
+									</div>
+									<div class="status-number">
+										 {{data.productprogress}}%
+									</div>
+									<div class="clearfix">
+										<br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="dashboard-stat2 portlet light">
+							<div class="display">
+								<div class="number">
+									<h3 class="font-red-haze">{{data.totalorder}}</h3>
+									<small>TOTAL ORDERS</small>
+								</div>
+								<div class="icon">
+									<i class="icon-like"></i>
+								</div>
+							</div>
+							<div class="progress-info">
+								<div class="progress">
+									<span style="width: {{data.orderprogress}}%;" class="progress-bar progress-bar-success red-haze">
+									<span class="sr-only">{{data.orderprogress}}% change</span>
+									</span>
+								</div>
+								<div class="status">
+									<div class="status-title">
+										 change
+									</div>
+									<div class="status-number">
+										 {{data.orderprogress}}%
+									</div>
+									<div class="clearfix">
+										<br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="dashboard-stat2 portlet light">
+							<div class="display">
+								<div class="number">
+									<h3 class="font-blue-sharp">Rs.{{data.grandtotal}}<small class="font-blue-sharp"></small></h3>
+									<small>TOTAL REVENUE</small>
+								</div>
+								<div class="icon">
+									<i class="icon-basket"></i>
+								</div>
+							</div>
+							<div class="progress-info">
+	                                                    
+	                                                    
+	                                                    
+	                                                    
+	                                                    
+								<div class="progress">
+									<span style="width:{{data.progresstotal}} %;" class="progress-bar progress-bar-success blue-sharp">
+									<span class="sr-only">{{data.progresstotal}}% grow</span>
+									</span>
+								</div>
+								<div class="status">
+									<div class="status-title">
+										 grow
+									</div>
+									<div class="status-number">
+										 {{data.progresstotal}}%
+									</div>
+									<div class="clearfix">
+										<br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<!--start-->
+					<div class="row">
+				<div class="col-md-12">
+					<!-- Begin: life time stats -->
+					<div class="portlet light">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="icon-bar-chart font-green-sharp"></i>
+								<span class="caption-subject font-green-sharp bold uppercase">Overview</span>
+								
+							</div>
+							<div >
+								<a title="" data-original-title="" href="javascript:;" class="collapse">
+								</a>
+								<a title="" data-original-title="" href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a title="" data-original-title="" href="javascript:;" class="reload">
+								</a>
+								<a title="" data-original-title="" href="javascript:;" class="fullscreen">
+								</a>
+								<a title="" data-original-title="" href="javascript:;" class="remove">
+								</a>
+							</div>
+						</div>
+						<div class="portlet-body">
+							<div class="tabbable-line">
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a ng-href="\#overview_4" data-toggle="tab">
+										Top Selling </a>
+									</li>
+									<li >
+										<a ng-href="\#overview_40"   data-toggle="tab">
+										Merchant</a>
+									</li>
+								</ul>
+								<div class="tab-content" >
+									<div class="tab-pane active" id="overview_4">
+										<div class="table-responsive" ng-init="topselling()">
+											<table class="table table-striped table-hover table-bordered">
+											<thead>
+											<tr>
+												<th>
+													 Product Name
+												</th>
+												<th>
+													 Price
+												</th>
+												<th>
+													 Sold
+												</th>
+												
+											</tr>
+											</thead>
+											<tbody   >									
+											
+											<tr ng-show="!showTopSell" ng-repeat="sell in sells" >
+												<td>
+												 <img style="width:50px; height:50px;"  ng-src="{{sell.img}}" onerror="if (this.src != '../fuel/products/images/notavailable.png') this.src = '../fuel/products/images/notavailable.png';">
+			
+													{{sell.product_name}}-{{sell.child_name}} 
+												</td>
+												<td>
+													 {{sell.price}}
+												</td>
+												<td>
+													 {{sell.sold}}
+												</td>
+											</tr>
+								            <tr><td ng-show="showTopSell" colspan='5'>No Records Found</td></tr>			
+					
+											</tbody>
+											</table>
+										</div>
+									</div>
+									
+
+									<div class="tab-pane " id="overview_40">
+										<div class="table-responsive" ng-init="merchantAction()">
+											<table class="table table-striped table-hover table-bordered">
+											<thead>
+											<tr>
+												<th>
+													 Merchant Name
+												</th>
+												<th>
+													 Total Orders
+												</th>
+												<th>
+													 Compeleted Orders
+												</th>
+												<th>
+													 Pending Orders
+												</th>
+												<th>
+													 Total Amount
+												</th>
+												
+											</tr>
+											</thead>
+											<tbody  >									
+											
+											<tr ng-show="!showMerchant" ng-repeat="merchant in merchants">
+												<td>
+											
+													{{merchant.merchantName}} 
+												</td>
+												<td>
+													 {{merchant.totalOrders}}
+												</td>
+												<td>
+												<span ng-repeat="completeOrder in completedOrders" ng-show="merchant.customer_id==completeOrder.customer_id" >{{completeOrder.statusCompleted}}
+												</span>
+													 
+												</td>
+												<td>
+													 <span ng-repeat="pendingOrder in pendingOrders" ng-show="merchant.customer_id==pendingOrder.customer_id" >{{pendingOrder.statusPending}}</span>
+												</td>
+												<td>
+													 {{merchant.totalAmount}}
+												</td>
+											</tr>
+								            <tr><td ng-show="showMerchant" colspan='5'>No Records Found</td></tr>			
+					
+											</tbody>
+											</table>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+					<!--end-->
+					
+			</div>
+
+			
+		</div>
+							
+									<div class="tab-pane" id="overview2" >
+		
+			<div class="clearfix">
+									<br>
+								</div>
+							<div class="row">
+				<div class="col-md-12">
+				<div class="portlet light" >
+						<div class="portlet-title" >
+							<div class="caption">
+								<i class="fa fa-globe"></i>View Orders
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12" >
+                	<div class="dataTables_filter" style="padding-top: 8px;">
+                		<label>Search:<input class="form-control input-sm input-inline" type="search" placeholder="" aria-controls="sample_1" ng-model="q"></label>
+                       
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                        <div class="pagination-div" >
+                           <ul class="pagination" style="float: right;">
+                           		<li style="float:left; padding-top:8px;">Total Records : {{daily_count}}&nbsp;</li>
+                                <li data-ng-class="DisablePrevPage()"><a href data-ng-click="prevPage()"> Prev</a></li>
+                                <li data-ng-repeat="n in range()" data-ng-class="{active: n == currentPage}" data-ng-click="setPage(n)"><a href="#">{{n+1}}</a></li>
+                                <li data-ng-class="DisableNextPage()"><a href data-ng-click="nextPage()">Next </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+						<div class="portlet-body">
+                        
+<table class="table table-striped table-bordered table-hover"  ng-init="vieworders()">
+							<thead>
+							
+                          
+                       <tr>
+								<th>
+									Order#
+								</th>
+								<th>
+									Total Items
+								</th>
+								
+                                 <th>
+									 Purchased On
+								</th> 
+								
+                                <th>
+									Customer
+								</th>
+								<th>
+									Merchant
+								</th>
+								<th>
+									Total Base Price
+								</th>
+								<th>
+									Total Purchased Price
+								</th>
+								<th>
+									Status
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+                            
+<tr ng-repeat="order in orders_len = (orders |  filter:q | pagination : currentPage*itemsPerPage | limitTo: itemsPerPage) " >
+								
+								
+								<td>
+									{{order.invoice_no}}  
+									 
+								</td>
+								<td>
+									{{order.items}}
+									 
+								</td>
+								<td>
+									{{order.purchased_on}}
+								</td>
+								<td>
+									{{order.name}}
+								</td>
+								<td>
+									{{order.business_name}}
+								</td>
+								<td>
+									{{order.price}}
+								</td>
+								<td>
+									{{order.merchant_price}}
+								</td>
+								<td>
+								<span class="{{order.statusClass}}"> {{order.status}}</span>
+								</td>
+							</tr>
+                             
+							
+                            </tbody>
+							</table>
+                            	
+						</div>
+					</div>
+					
+				</div>
+			</div>	
+							</div>
+							</div>
+			
+		<div class="modal fade"  ng-show="showLoading">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<img src="../metronic/theme/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+											<span>
+											&nbsp;&nbsp;Loading... </span>
+										</div>
+									</div>
+								</div>
+							</div>

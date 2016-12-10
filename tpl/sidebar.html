@@ -1,0 +1,62 @@
+    <div class="page-sidebar md-shadow-z-2-i  navbar-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+    <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+    <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+    <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+
+
+    <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <li class="start active" id="das">
+                    <a ui-sref="overview">
+                    <i class="icon-home"></i>
+                    <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                
+                <li id="cust">
+                    <a ui-sref="customer">
+                    <i class="fa fa-users"></i>
+                    <span class="title">
+                    Customers </span>
+                    </a>
+                </li>
+                
+                <li id="cat">
+                    <a ui-sref="categorylisting">
+                    <i class="fa fa-tags"></i>
+                    <span class="title">
+                    Categories </span>
+                    </a>
+                </li>
+                
+                <li id="product">
+                    <a ui-sref="productsList">
+                    <i class="fa fa-cubes"></i>
+                    <span class="title">
+                    Products </span>
+                    </a>
+                </li>
+                
+                <li id="product_assig">
+                    <a ui-sref="productsAssign" >
+                    <i class="fa fa-tree"></i>
+                    <span class="title">
+                    Products Assign </span>
+                    </a>
+                </li>
+                
+                <li id="area">
+                    <a ui-sref="citylisting">
+                    <i class="fa fa-cube"></i>
+                    <span class="title">
+                    Area </span>
+                    </a>
+                </li>
+                
+            </ul>
+
+    <!-- END SIDEBAR MENU -->
+</div>

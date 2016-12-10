@@ -1,0 +1,69 @@
+[21-Jun-2016 20:42:55 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'GROXER_ADMIN_LOGIN' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1240
+[21-Jun-2016 20:46:27 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1287
+[21-Jun-2016 20:46:29 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1287
+[21-Jun-2016 20:46:50 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'GROXER_ADMIN_LOGIN' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1240
+[23-Jun-2016 10:39:29 Asia/Kolkata] PHP Warning:  Invalid argument supplied for foreach() in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 418
+[23-Jun-2016 17:28:58 Asia/Kolkata] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sub_category_name' cannot be null' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php:189
+Stack trace:
+#0 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(189): PDOStatement->execute(Array)
+#1 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(120): GroxerAdminModule->insertsubcategory()
+#2 /home/groxerco/public_html/connector/common_library.php(15): GroxerAdminModule->getRequestAction()
+#3 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(17): CommonLibrary->__construct()
+#4 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(1722): GroxerAdminModule->__construct()
+#5 {main}
+  thrown in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 189
+[23-Jun-2016 17:28:58 Asia/Kolkata] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sub_category_name' cannot be null' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php:189
+Stack trace:
+#0 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(189): PDOStatement->execute(Array)
+#1 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(120): GroxerAdminModule->insertsubcategory()
+#2 /home/groxerco/public_html/connector/common_library.php(15): GroxerAdminModule->getRequestAction()
+#3 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(17): CommonLibrary->__construct()
+#4 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(1722): GroxerAdminModule->__construct()
+#5 {main}
+  thrown in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 189
+[23-Jun-2016 17:29:22 Asia/Kolkata] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category_id' cannot be null' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php:189
+Stack trace:
+#0 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(189): PDOStatement->execute(Array)
+#1 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(120): GroxerAdminModule->insertsubcategory()
+#2 /home/groxerco/public_html/connector/common_library.php(15): GroxerAdminModule->getRequestAction()
+#3 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(17): CommonLibrary->__construct()
+#4 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(1722): GroxerAdminModule->__construct()
+#5 {main}
+  thrown in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 189
+[23-Jun-2016 17:29:22 Asia/Kolkata] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category_id' cannot be null' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php:189
+Stack trace:
+#0 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(189): PDOStatement->execute(Array)
+#1 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(120): GroxerAdminModule->insertsubcategory()
+#2 /home/groxerco/public_html/connector/common_library.php(15): GroxerAdminModule->getRequestAction()
+#3 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(17): CommonLibrary->__construct()
+#4 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(1722): GroxerAdminModule->__construct()
+#5 {main}
+  thrown in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 189
+[23-Jun-2016 18:40:03 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[23-Jun-2016 19:48:00 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 12:09:14 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 12:17:27 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 12:27:12 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 12:27:18 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 12:36:21 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 14:09:37 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[25-Jun-2016 21:34:48 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'PRODUCT_CSV_TABLE' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI_Products.php on line 332
+[25-Jun-2016 21:34:56 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'PRODUCT_CSV_TABLE' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI_Products.php on line 332
+[25-Jun-2016 21:35:15 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'PRODUCT_CSV_TABLE' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI_Products.php on line 332
+[25-Jun-2016 21:35:55 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'PRODUCT_CSV_TABLE' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI_Products.php on line 332
+[26-Jun-2016 16:12:19 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[26-Jun-2016 17:26:34 Asia/Kolkata] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city_name' cannot be null' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php:643
+Stack trace:
+#0 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(643): PDOStatement->execute(Array)
+#1 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(71): GroxerAdminModule->insertCity()
+#2 /home/groxerco/public_html/connector/common_library.php(15): GroxerAdminModule->getRequestAction()
+#3 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(17): CommonLibrary->__construct()
+#4 /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php(1722): GroxerAdminModule->__construct()
+#5 {main}
+  thrown in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 643
+[26-Jun-2016 19:58:53 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[27-Jun-2016 18:59:15 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[27-Jun-2016 19:06:25 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572
+[27-Jun-2016 19:45:37 Asia/Kolkata] PHP Fatal error:  Call to undefined function delete() in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI_Products.php on line 287
+[28-Jun-2016 18:38:55 Asia/Kolkata] PHP Warning:  unlink(../../fuel/products/images/37a749d808e46495a8da1e5352d03cae.jpg): No such file or directory in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI_Products.php on line 237
+[28-Jun-2016 18:42:19 Asia/Kolkata] PHP Fatal error:  Undefined class constant 'SUPER_ADMIN_LOGGED_HISTORY' in /home/groxerco/public_html/groxerAdminNew/groxerAdminApi/groxerAdminAPI.php on line 1572

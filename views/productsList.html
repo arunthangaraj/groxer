@@ -1,0 +1,94 @@
+
+	    <div class="tabbable-custom">
+	    	<ul class="nav nav-tabs">
+				<li class="active">
+					<a ui-sref="productsList"> View Products </a>
+				</li>
+				<li>
+					<a ui-sref="productsModify"> Add Product </a>
+				</li>
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane active">
+					<div class="portlet light">
+					    <div class="portlet-title">
+					        <div class="caption font-green-haze">
+					            <span class="caption-subject bold uppercase">Products</span>
+					        </div>
+					        <div class="actions">
+					        	<button type="button" class="btn btn-success" ng-csv="getArray" csv-header="['ProductId', 'ProductCode', 'ProductName', 'Test']" filename="test.csv">Export product csv</button>
+					        </div>
+					    </div>
+					    <div class="portlet-body" >
+							<div class="col-md-6 col-sm-12" >
+					            <div class="dataTables_filter" style="padding-top: 8px;">
+					                <label>Search:<input class="form-control input-sm input-inline" type="search" placeholder="" aria-controls="sample_1" ng-model="searchText"></label>
+					            </div>
+					        </div>
+					        <div class="col-md-6 col-sm-12">
+					            <div class="pagination-div" >
+					                <ul class="pagination" style="float: right;">
+					                    <li style="float:left; padding-top:8px;">Total Records : {{productsCount}}&nbsp;</li>
+					                    <li data-ng-class="DisablePrevPage()"><a href data-ng-click="prevPage()"> Prev</a></li>
+					                    <li data-ng-repeat="n in range()" data-ng-class="{active: n == currentPage}" data-ng-click="setPage(n)"><a href="#">{{n + 1}}</a></li>
+					                    <li data-ng-class="DisableNextPage()"><a href data-ng-click="nextPage()">Next </a></li>
+					                </ul>
+					            </div>
+					        </div>
+					        <div>
+					            <table class="table  table-bordered table-hover dataTable no-footer" >
+					                <thead>
+					                    <tr>
+					                        <th>
+					                            Product Name
+					                            <span data-ng-click="product_sort = 'product_name'" class="fa fa-caret-down pointer"></span>
+					                            <span data-ng-click="product_sort = '-product_name'" class="fa fa-caret-up pointer"></span>
+
+					                        </th>
+
+					                        <th>
+					                            Product Code
+					                            <span data-ng-click="product_sort = 'product_code'" class="fa fa-caret-down pointer"></span>
+					                            <span data-ng-click="product_sort = '-product_code'" class="fa fa-caret-up pointer"></span>
+
+					                        </th>
+
+					                        <th> 
+					                            Edit
+					                        </th>
+					                        <th>
+					                            Delete
+					                        </th>
+					                        
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    <tr class="" data-ng-repeat="product in productLen = (products|  filter:searchText | orderBy:product_sort | pagination : currentPage * itemsPerPage | limitTo: itemsPerPage)" >
+					                        <td>{{product.product_name}}</td>
+					                        <td>{{product.product_code}}</td>
+					                        <td class="center">
+						                        <a class="btn btn-xs default btn-editable" ui-sref="productsModify({id: product.product_id, remove: product.remove})">
+													<i class="fa fa-pencil"></i>
+													Edit
+												</a>
+											</td>
+					                        <td class="center">
+						                        <button class="btn btn-xs default btn-editable" ng-click="removeProduct(product)" href="javascript:;" ng-disabled="product.remove==0">
+													<i class="fa fa-trash"></i>
+													Delete
+												</button>
+											</td>
+					                    </tr>
+
+					                    <tr data-ng-show="productLen.length == 0">
+					                        <td colspan="11"><div class=" alert alert-info"><p class="text-center">No results found.</p></div></td>
+					                    </tr>
+					                </tbody>
+					            </table>
+					        </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,58 @@
+<form class="form-horizontal" id="subcategoryform" name="subcategoryform" ng-submit="insertsubcategory()" method="post" target="groxer_iframe" enctype="multipart/form-data" ng-init="subcategoryView()">
+	
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()" aria-hidden="true"></button>
+	<h4 class="modal-title">Add Sub Category</h4>
+</div>
+<div class="modal-body">
+	<div class="row">
+		<div class="col-md-12">
+
+									
+									<div class="portlet-body form">
+										<!-- BEGIN FORM-->
+										<div class="form-group form-md-line-input">
+													<label for="cathead" class="col-md-3 control-label">Select Category</label>
+													<div class="col-md-9">
+										<select  ng-model="categoryId"  class="form-control required" required>
+     <option value="">Select</option>
+     <option ng-repeat="category in categories"  value="{{category.id}}">{{category.name}}</option>
+    </select>
+	<div class="form-control-focus">
+											</div>
+					
+														<span class="help-block">
+														
+														</span>
+													</div> </div>
+		
+                                              <!--start-->
+                                              	<div class="form-group form-md-line-input">
+													<label class="col-md-3 control-label">Sub Category Name</label>
+													<div class="col-md-9" ng-class="{ 'has-error' : subcategoryform.subcategoryname.$invalid && subcategoryform.subcategoryname.$dirty }">
+							<input id="subcategoryname" name="subcategoryname" ng-model="subcategoryname" placeholder="Enter The Sub Category Name" class="form-control email" type="text" required>
+							<div class="form-control-focus">
+											</div>
+														<span class="help-block">
+														Enter The Sub Category Name</span>
+													</div>
+												</div>
+
+                                              <!--end-->
+													
+										</div>
+					
+			
+					
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn default" ng-click="cancel()">Close</button>
+	<button type="submit" class="btn green" ng-disabled="subcategoryform.$invalid">Save</button>
+</div>
+					
+								
+					
+             	</form>        
+			 		

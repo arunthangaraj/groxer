@@ -1,0 +1,205 @@
+
+	    <div class="tabbable-custom">
+	    	<ul class="nav nav-tabs">
+				<li>
+					<a ui-sref="productsList"> View Products </a>
+				</li>
+				<li class="active">
+					<a ui-sref="productsModify"> {{title}} </a>
+				</li>
+			</ul>
+
+			<div class="tab-content">
+
+				<div class="tab-pane active">
+					<div class="portlet light">
+					    <div class="portlet-title">
+					        <div class="caption font-green-haze">
+					            <span class="caption-subject bold uppercase">{{subTitle}}</span>
+					        </div>
+					    </div>
+					    <div class="portlet-body form">
+					    	<form class="form-horizontal" id="productForm" name="productForm"  method="post" ng-submit="modifyProduct()" >
+								<div class="form-body">
+									
+									<div class="form-group form-md-line-input" ng-class="{ 'has-error' : productForm.prodName.$invalid && productForm.prodName.$dirty }">
+										<label class="col-md-3 control-label">Product Name</label>
+										<div class="col-md-9">
+											<input aria-required="true" name="prodName" ng-model="prodName" placeholder="Enter the product name" class="form-control required" type="text" required>
+											<div class="form-control-focus"></div>
+										</div>
+									</div>
+												
+                                    <div class="form-group form-md-line-input" ng-class="{ 'has-error' : productForm.prodCode.$invalid && productForm.prodCode.$dirty }">
+										<label class="col-md-3 control-label">Product Code</label>
+										<div class="col-md-9" >
+											<input name="prodCode" ng-disabled="editProduct" ng-model="prodCode" placeholder="Enter the product code" class="form-control" type="text" required="true">
+											<div class="form-control-focus"></div>
+										</div>
+									</div>
+
+									<div class="form-group form-md-line-input" ng-class="{ 'has-error' : productForm.prodCode.$invalid && productForm.prodCode.$dirty }">
+										<label class="col-md-3 control-label">Sub Category</label>
+										<div class="col-md-9" >
+										<div class="" style="height: 300px; overflow: auto">
+											<span ng:repeat="(index, subCategory) in subCategories" class="col-md-4">
+											
+		                                       <input type="checkbox" name="selectedCategories[]" value="{{subCategory.sub_category_id}}" ng-checked="selectedCategory.indexOf(subCategory.sub_category_id)>-1" ng-click="toggleSelection(subCategory.sub_category_id)">
+		                                       {{subCategory.sub_category_name}}&nbsp;&nbsp;
+		                                       <br ng:show="(index+1)%3==0" />
+	                                       </span>
+	                                       </div>
+										</div>
+									</div>
+												
+									<div class="clearfix">
+									<br>
+									</div>
+									<div class="clearfix">
+										<br>
+									</div>
+
+									<div class="portlet light">
+										<div class="portlet-title">
+											<div class="caption font-green-haze">
+												<i class="fa fa-edit"></i>Product Quantity
+											</div>
+											<!-- <div class="actions">
+											<input type="hidden" name="countnewweight" id="countnewweight" value="0" />
+											<a id="sample_editable_1_new" class="btn green">
+													Add New <i class="fa fa-plus"></i>
+													</a>
+													</div> -->
+										</div>
+										<div class="portlet-body flip-scroll" style="overflow:scroll;">
+
+										<table class="table table-bordered table-striped table-condensed flip-content" id="samp_edit">
+											<thead class="flip-content">
+											<tr>
+												<th>
+													 Quantity Type
+												</th>
+												<th>
+													 Quantity Value
+												</th>
+												<th>
+													 Price
+												</th>
+												<th>
+													 Image
+												</th>
+											</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<select  ng-model="type" class="form-control input-small  required">
+															<option value="">--Select--</option>
+															<option  value="1">ml</option>
+															<option value="2">gms</option>
+														</select>
+													</td>
+													<td>
+														<input  ng-model="value" type="text" class="form-control input-small  required">
+													</td>
+													<td>
+														<input type="text"  ng-model="price" class="form-control input-small  required">
+													</td>
+													<td>
+														<div class="fileinput fileinput-new" data-provides="fileinput">
+															<div class="thumbnail" style="width: 75px; height: 75px;">
+																<img ngf-thumbnail ="picfile"/>
+															</div>
+															<!-- <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 75px; max-height: 75px;"></div> -->
+															<div>
+																<span class="btn default btn-xs btn-file">
+																	<!-- <span class="fileinput-new">Select image </span> -->
+																	<!-- <span class="fileinput-exists">Change </span> -->
+																	<input type="file" ngf-select ng-model="picfile" accept="image/jpeg" >
+																</span>
+																<!-- <a href="#" class="btn red btn-xs fileinput-exists" data-dismiss="fileinput">Remove </a> -->
+															</div>
+														</div>
+													</td>
+													
+												</tr>
+
+												
+											</tbody>
+
+											</table>
+											<div class="row" align="center">
+												<!-- <tr align="center"> -->
+
+														<button class="btn green" type="button" ng-click="addQuantity()" ng-show="! childEdit"><i class="fa fa-plus"></i> Add Quantity</button>
+														<button class="btn green" type="button" ng-click="updateChild()" ng-show="childEdit"><i class="fa fa-check"></i> Update</button>
+													
+													<!-- </tr> -->
+											</div>
+											<br>
+										
+											
+											<table class="table table-bordered table-striped table-condensed flip-content" id="samp_edit" ng-show="child_set.length > 0">
+											<thead class="flip-content">
+											<tr>
+												<th>
+													 Quantity Type
+												</th>
+												<th>
+													 Quantity Value
+												</th>
+												<th>
+													 Price
+												</th>
+												<th>
+													 Image
+												</th>
+												
+												<th>
+													 Options
+												</th>
+											</tr>
+											</thead>
+											<tbody >
+												
+												<tr ng-repeat="child in child_set" ng-show="child.remove == 0">
+													<td>{{child.typeval}}</td>
+													<td>{{child.value}}</td>
+													<td>{{child.price}}</td>
+													<td>
+														<div class="thumbnail" style="width: 75px; height: 75px;">
+															<img ngf-thumbnail ="child.img"/>
+														</div>
+													</td>
+													<td>
+														<button class="btn green" type="button" ng-click="editChild(child.id)"><i class="fa fa-pencil"></i></button>
+														<button class="btn red" type="button" ng-click="removeChild(child.id)" ng-disabled="remove==0 && child.exist==1"><i class="fa fa-trash"></i></button>
+													</td>
+												</tr>
+											</tbody>
+											</table>
+										</div>
+					</div>
+
+									<div class="pull-right" style="padding-right:10px;">
+										<div class="actions btn-set">
+											<button type="button" class="btn green" ng-show="! editProduct" ng-click="addProduct()"><i class="fa fa-check"></i> Save Product</button>
+	                                        <button type="button" class="btn red" ng-show="! editProduct" ng-click="reset()"><i class="fa fa-check"></i> Reset</button>
+
+	                                        <button type="button" class="btn green" ng-show="editProduct" ng-click="updateProduct()"><i class="fa fa-check"></i> Update Product</button>
+	                                        <button type="button" class="btn red" ng-show="editProduct" ui-sref="productsList"><i class="fa fa-check"></i> Cancel</button>
+										</div>
+									</div>
+									<div class="clearfix">
+										<br>
+									</div>
+									<div class="clearfix">
+										<br>
+									</div>
+								</div>
+							</form>
+					    </div>
+				    </div>
+				</div>
+			</div>
+		</div>
